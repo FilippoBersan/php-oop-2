@@ -29,6 +29,7 @@ class Vari extends Categorie{
   public $giochi;
   public $cucce;
 
+  public
 
   function __construct($prodotti,$_cani,$_gatti,$_cibo,$_giochi,$_cucce)
   {
@@ -38,23 +39,49 @@ class Vari extends Categorie{
       $this->giochi = $_giochi;
         $this->cucce = $_cucce;
   }
+
+
+}
+
+class Info extends Vari{
+    public $img;
+  public $titolo;
+   public $prezzo;
+
+   function __construct($_img,$_titolo,$_prezzo, $prodotti,$_cani,$_gatti,$_cibo,$_giochi,$_cucce)
+   {
+
+     parent::__construct($prodotti,$_cani,$_gatti,$_cibo,$_giochi,$_cucce);
+      $this->img= $_img;
+            $this->titolo= $_titolo;
+                  $this->prezzo= $_prezzo;
+   }
+
 }
 
 
 $prodotti= new Prodotti('Prodotti');
 $categorie = new Categorie('Prodotti','Cani','Gatti');
 $vari = new Vari('Prodotti','Cani','Gatti','Cibo','Giochi','Cucce');
+$info = new Info('img','Titolo','Prezzo','Prodotti','Cani','Gatti','Cibo','Giochi','Cucce');
+
+$vari->cibo = 'Cibo';
+$vari->giochi = 'Giochi ';
+$vari->cucce = 'Cucce ';
+
+$info->img = 'img';
+$info->titolo= 'Titolo';
+$info->prezzo = 'Prezzo';
 
 
 
-var_dump($prodotti,$categorie,$vari);
+
+
+
+
+
+var_dump($prodotti,$categorie,$vari,$info);
 ?>
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -63,8 +90,31 @@ var_dump($prodotti,$categorie,$vari);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Php Oop 2</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="cont">
+    <div class="card">
+<h3> <?php echo $info->img ?> </h1>
+  <strong> <?php echo $info->titolo ?></strong>
+  <p>  <?php echo $info->prezzo ?></p>
+ </div>
+
+    <div class="card">
+<h3> <?php echo $info->img ?> </h1>
+  <strong> <?php echo $info->titolo ?></strong>
+  <p>  <?php echo $info->prezzo ?></p>
+ </div>
+
+    <div class="card">
+<h3> <?php echo $info->img ?> </h1>
+  <strong> <?php echo $info->titolo ?></strong>
+  <p>  <?php echo $info->prezzo ?></p>
+ </div>
+    
+    
+
+  </div>
   
 </body>
 </html>

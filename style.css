@@ -1,0 +1,11 @@
+.cont {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  text-align: center;
+  background-color: rgb(73, 115, 59);
+  height: 200px;
+  width: 200px;
+}
