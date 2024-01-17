@@ -3,7 +3,7 @@
 require_once __DIR__  .'/Models/Prodotti.php';
 
 
- $prodotto  = new Prodotti(100,'Prodotto Prova 1','Cani');
+ $prodotto  = new Prodotti(100,'Prodotto Prova 1','Cani' );
 
 var_dump($prodotto)
 

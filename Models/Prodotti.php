@@ -17,7 +17,7 @@ public $categoria;
   }
 
 
-  // GETTERS
+  // GETTERS.
  
 
   public function get_id(){
